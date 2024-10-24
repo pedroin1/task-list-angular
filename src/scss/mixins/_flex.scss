@@ -1,0 +1,30 @@
+@mixin flex-default {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-default-column {
+  @include flex-default;
+  flex-direction: column;
+}
+
+@mixin flex-default-wrap {
+  @include flex-default;
+  flex-wrap: wrap;
+}
+
+@mixin flex-custom(
+  $flex-direction,
+  $justify-content,
+  $align-items,
+  $gap: 0px,
+  $wrap: nowrap
+) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  gap: $gap;
+  flex-wrap: $wrap;
+}

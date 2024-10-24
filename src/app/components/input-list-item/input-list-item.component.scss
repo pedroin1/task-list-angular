@@ -1,0 +1,12 @@
+@import "../../../scss/mixins/flex";
+:host {
+  ul {
+    @include flex-default-column;
+    margin-top: 8px;
+    gap: 12px;
+  }
+
+  h1 {
+    margin-top: 16px;
+  }
+}

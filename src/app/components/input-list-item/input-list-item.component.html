@@ -1,0 +1,50 @@
+<h1>Pendentes</h1>
+<ul>
+  @for (task of taskListPending; track $index) {
+  <label class="input-label" [for]="task.id">
+    <input
+      class="input-label__checkbox"
+      type="checkbox"
+      [checked]="task.checked"
+      (click)="changeTaskState(task)"
+    />
+    <input
+      #inputValue
+      class="input-label__text"
+      type="text"
+      [value]="task.value"
+      (keyup.enter)="changeTaskValue(task, inputValue.value)"
+    />
+    <button
+      class="btn btn-danger-circle"
+      title="Deletar item"
+      (click)="deleteTask(task.id)"
+    ></button>
+  </label>
+  }
+</ul>
+<h1>Concluidas</h1>
+<ul>
+  @for (task of taskListConcluded; track $index) {
+  <label class="input-label" [for]="task.id">
+    <input
+      class="input-label__checkbox"
+      type="checkbox"
+      [checked]="task.checked"
+      (click)="changeTaskState(task)"
+    />
+    <input
+      #inputValue
+      class="input-label__text"
+      type="text"
+      [value]="task.value"
+      (input)="changeTaskValue(task, inputValue.value)"
+    />
+    <button
+      class="btn btn-danger-circle"
+      title="Deletar item"
+      (click)="deleteTask(task.id)"
+    ></button>
+  </label>
+  }
+</ul>

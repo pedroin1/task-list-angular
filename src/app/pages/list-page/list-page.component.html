@@ -1,0 +1,34 @@
+@if (taskList.length > 0) {
+<app-input-add-item
+  [taskList]="taskList"
+  (onCreateNewTaskEvent)="createTask($event)"
+/>
+<main class="container main-container">
+  <app-input-list-item
+    [taskList]="taskList"
+    (deleteTaskEvent)="deleteTask($event)"
+    (changeTaskStateEvent)="updateTask($event)"
+    (changeTaskValueEvent)="updateTask($event)"
+  />
+</main>
+<footer class="footer-container">
+  <button class="btn btn-danger" (click)="deleteAllTasks()">
+    Apagar todos os itens
+  </button>
+</footer>
+}@else {
+<div class="container create-task-container">
+  <img src="assets/img/task-list-null.png" alt="" loading="eager" />
+
+  @if (addItem()) {
+  <button class="btn btn-primary" (click)="addItem.set(false)">
+    Crie uma lista de tarefas
+  </button>
+  } @else {
+  <app-input-add-item
+    [taskList]="taskList"
+    (onCreateNewTaskEvent)="createTask($event)"
+  />
+  }
+</div>
+}

@@ -1,0 +1,25 @@
+<header [ngClass]="{ 'has-items': taskList.length > 0 }">
+  @if (taskList.length > 0) {
+  <h1>Minha Lista</h1>
+  }
+  <div [ngClass]="{ container: taskList.length > 0 }">
+    <label class="input-label" for="inputValue">
+      <input
+        class="input-label__text"
+        placeholder="Adicione novo item..."
+        type="text"
+        id="inputValue"
+        autofocus
+        #inputText
+        (keyup.enter)="onCreateNewTask()"
+        [(ngModel)]="inputValue"
+        [ngClass]="{ 'remove-margin-bottom': taskList.length > 0 }"
+      />
+      <button
+        class="btn btn-primary-circle"
+        title="Criar tarefa"
+        (click)="onCreateNewTask()"
+      ></button>
+    </label>
+  </div>
+</header>

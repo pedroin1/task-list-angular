@@ -1,0 +1,36 @@
+.input-label {
+  height: 40px;
+  width: 100%;
+  padding: 4px 8px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: var(--black-010);
+  border-radius: 50px;
+
+  &__text {
+    width: 85%;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 14px;
+    margin-left: 14px;
+    color: var(--white);
+  }
+
+  &__checkbox {
+    appearance: none;
+    background-color: var(--white);
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+
+    &:checked {
+      background-color: var(--primary);
+    }
+  }
+}

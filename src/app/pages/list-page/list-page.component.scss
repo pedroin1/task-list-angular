@@ -1,0 +1,32 @@
+@import "../../../scss/mixins/flex";
+@import "../../../scss/mixins/scroll";
+
+:host {
+  width: 100vw;
+  height: 100vh;
+
+  @include flex-default-column;
+}
+
+.create-task-container {
+  @include flex-default-column;
+
+  .btn-primary,
+  app-input-add-item {
+    margin-top: 28px;
+    width: 100%;
+  }
+}
+
+.main-container {
+  height: calc(100vh - 130px - 90px);
+  width: 100%;
+  @include scrollbar-styled;
+}
+
+.footer-container {
+  height: 10%;
+  width: 100%;
+  border-top: 2px solid var(--black-010);
+  @include flex-default-column;
+}
