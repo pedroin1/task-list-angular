@@ -20,7 +20,7 @@
 
 .main-container {
   height: calc(100vh - 130px - 90px);
-  width: 100%;
+  width: 70%;
   @include scrollbar-styled;
 }
 
@@ -29,4 +29,10 @@
   width: 100%;
   border-top: 2px solid var(--black-010);
   @include flex-default-column;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    width: 100%;
+  }
 }

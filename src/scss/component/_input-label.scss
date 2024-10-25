@@ -16,8 +16,14 @@
     outline: none;
     background: none;
     font-size: 14px;
-    margin-left: 14px;
+    padding: 4px;
+
     color: var(--white);
+
+    &:focus {
+      border-bottom: 2px solid #1a1a20;
+      padding-bottom: 2px;
+    }
   }
 
   &__checkbox {
